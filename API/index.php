@@ -2,27 +2,28 @@
 require_once 'db.php';
  
 try {
-$conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-echo "Connected to <b> $dbname </b>  at <b> $host </b> successfully.";
+$konekcija = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+// echo "Connected to <b> $dbname </b>  at <b> $host </b> successfully.";
 } catch (PDOException $pe) {
     die("Could not connect to the database $dbname :" . $pe->getMessage());
 }
 ?>
 <hr />
 <?php
-	$pdo_statement = $conn->prepare("SELECT * FROM posts ORDER BY id DESC");
+	$pdo_statement = $konekcija->prepare("SELECT * FROM posts ORDER BY id DESC");
 	$pdo_statement->execute();
-	$result = $pdo_statement->fetchAll();
+	$rezultat = $pdo_statement->fetchAll();
 	
-	if(!empty($result)) { 
-		foreach($result as $row) {
+	if(!empty($rezultat)) { 
+		foreach($rezultat as $kolona) {
 ?>
 
-<p><?php //echo $row["id"]; ?></p> 
-<p><?php echo $row["post"];  ?></p>
-<p><?php echo $row["email"];  ?></p>
-<p><?php echo $row["author"];  ?></p><hr />
+<p><?php //echo $kolona["id"]; ?></p> 
+<p><?php echo $kolona["email"];  ?></p>
+<p><?php echo $kolona["post"];  ?></p>
+<p><?php echo $kolona["author"];  ?></p><hr />
 <?php
-						}
-				}
+		}
+	}
 ?>
+<a href="add.php">Add post</a>
