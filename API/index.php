@@ -20,8 +20,8 @@ $konekcija = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
 
 <p><?php //echo $kolona["id"]; ?></p> 
 <p><?php echo $kolona["email"];  ?></p>
-<p><?php echo $kolona["post"];  ?></p>
-<p><?php echo $kolona["author"];  ?></p><hr />
+<p><pre><?php echo $kolona["post"];  ?></pre></p>
+<p><?php echo $kolona["date"];  ?></p><hr />
 <?php
 		}
 	}
