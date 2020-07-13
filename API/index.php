@@ -23,6 +23,7 @@ echo "Connected to $dbname at $host successfully.";
 <p><?php echo $row["email"];  ?></p>
 <p><?php echo $row["author"];  ?></p><hr />
 <?php
-								}
-						}
+			}
+	}
 ?>
+	
