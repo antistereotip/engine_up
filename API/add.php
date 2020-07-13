@@ -17,15 +17,15 @@ if(!empty($_POST["add_record"])) {
 	$pdo_statement->execute();
 	
 		
-	$result = $pdo_statement->execute( array(  ':email'=>$_POST['email'], ':post'=>$_POST['post'], ':date'=>$_POST['date'] ) );
-	if (!empty($result) ){
+	$rezultat = $pdo_statement->execute( array(  ':email'=>$_POST['email'], ':post'=>$_POST['post'], ':date'=>$_POST['date'] ) );
+	if (!empty($rezultat) ){
 	  header('location:add.php');
 	}
 }
 ?>
 <html>
 <head>
-<title>PHP PDO CRUD - Add New Record</title>
+<title>Dodaj novi zapis</title>
 <style>
 
 </style>
@@ -33,7 +33,7 @@ if(!empty($_POST["add_record"])) {
 <body>
 <a href="index.php" class="button_link">Back to List</a>
 <div>
-<h1>Add New Record</h1>
+<h1>Dodaj novi zapis</h1>
 <form name="frmAdd" action="" method="POST">
   <div>
 	  <label>Email: </label><br>
