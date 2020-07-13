@@ -3,7 +3,7 @@ require_once 'db.php';
  
 try {
 $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-echo "Connected to $dbname at $host successfully.";
+echo "Connected to <b> $dbname </b>  at <b> $host </b> successfully.";
 } catch (PDOException $pe) {
     die("Could not connect to the database $dbname :" . $pe->getMessage());
 }
@@ -18,12 +18,11 @@ echo "Connected to $dbname at $host successfully.";
 		foreach($result as $row) {
 ?>
 
-<p><?php echo $row["id"]; ?></p> 
+<p><?php //echo $row["id"]; ?></p> 
 <p><?php echo $row["post"];  ?></p>
 <p><?php echo $row["email"];  ?></p>
 <p><?php echo $row["author"];  ?></p><hr />
 <?php
-			}
-	}
+						}
+				}
 ?>
-	
